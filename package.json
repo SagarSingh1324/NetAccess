@@ -1,0 +1,61 @@
+{
+  "name": "net-access",
+  "productName": "Net Access",
+  "version": "1.1.0",
+  "description": "IIT Madras Net Access",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-builder",
+    "start": "electron ."
+  },
+  "author": {
+    "name": "Sagar Singh"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "chromedriver": "^115.0.0",
+    "cors": "^2.8.5",
+    "electron-chromedriver": "^25.4.0",
+    "electron-store": "^8.1.0",
+    "express": "^4.18.2",
+    "path": "^0.12.7",
+    "puppeteer-core": "^20.9.0",
+    "selenium-webdriver": "^4.11.1"
+  },
+  "devDependencies": {
+    "electron": "^25.3.2",
+    "electron-builder": "^24.6.3"
+  },
+  "build": {
+    "appId": "com.iitmnetaccess.app",
+    "win": {
+      "target": "nsis",
+      "publisherName": "Krutik Malani",
+      "signingHashAlgorithms": [
+        "sha256"
+      ]
+    },
+    "productName": "Net Access",
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": true,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Net Access",
+      "installerLanguages": "en_US",
+      "deleteAppDataOnUninstall": true,
+      "multiLanguageInstaller": true
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "driver/**/*",
+      "node_modules/**/*",
+      "icon.png"
+    ]
+  }
+}
